@@ -1,0 +1,15 @@
+{
+  "name": "jQuery-Validate",
+  "version": "0.0.1",
+  "description": "jQuery Form Validation plugin",
+  "repository": "https://github.com/ryanburgess/jquery-validate",
+  "author": "Ryan Burgess",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-newer": "~0.6.1",
+    "grunt-sass": "~0.11.0",
+    "grunt-bump": "0.0.13"
+  }
+}

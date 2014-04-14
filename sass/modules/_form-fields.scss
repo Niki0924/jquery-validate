@@ -1,0 +1,14 @@
+.field-item{
+    position: relative;
+    @include rem("margin-bottom", 30);
+
+    label{
+        display:block;
+    }
+    input, textarea{
+        display: block;
+        @include roundedCorners(5);
+        @include rem("padding", 5);
+        border:1px solid $darkGrey;
+    }
+}

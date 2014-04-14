@@ -1,7 +1,12 @@
 .error-message{
 	display:none;
+	position: absolute;
+	bottom:-20px;
 }
-
+.field-item{
+	position: relative;
+	margin-bottom:30px;
+}
 label{
 	display:block;
 }
