@@ -10,9 +10,13 @@
         telephone: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/,
         password: /^[a-z0-9_-]{6,18}$/,
         url: /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/,
+        date: /^([1-9]|0[1-9]|[12][0-9]|3[01])\D([1-9]|0[1-9]|1[012])\D(19[0-9][0-9]|20[0-9][0-9])$/, // dd mm yyyy, d/m/yyyy, etc.
+        year: /^(19|20)[\d]{2,2}$/,
         number: /^[0-9]{1,45}$/,
         alphabet: /^[A-z]+$/,
-        alphanumeric: /^[a-zA-Z0-9]*$/
+        alphanumeric: /^[a-zA-Z0-9]*$/,
+        ipaddress: /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,
+        hexvalue: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/
     }
 
     // Error messages after validation rules
@@ -51,7 +55,7 @@
     });
 
     // Validate form fields function
-    function validation(value, id, callback){
+    function validation(value, id){
 
         // hide any errors already showing
         $('#' + id).parent('.field-item').find('.error-message').hide();
@@ -96,6 +100,7 @@
         //clear valid array
         valid = new Array();
 
+        // prevent default form submit
         event.preventDefault();
 
         $('input, select, textarea').each(function () {
@@ -105,7 +110,6 @@
 
             if (typeof attr !== 'undefined' && attr !== false) {
                 // pass field values and field ids to validation function
-                //validation(value, fieldId, callback);
                 validation(value, fieldId);
             }
         });
