@@ -48,7 +48,13 @@
                 // add error messages to markup
                 var type = validation[i];
                 type = type.replace(' ', '');
-                $('#' + fieldId).parent('.field-item').append('<span class="error-message ' + type +'">'+ errorMessage[type] +'</span>');
+
+                var ariaError = fieldId + '-'+ type +'-error';
+                //add aria described by
+                $('#' + fieldId).attr('aria-describedby', ariaError);
+
+                // add error message to field
+                $('#' + fieldId).parent('.field-item').append('<span class="error-message ' + type +'" id="'+ ariaError +'" role="alert">'+ errorMessage[type] +'</span>');
             }
             
         }
