@@ -75,6 +75,7 @@
 
         // hide any errors already showing
         $('#' + id).parent('.field-item').find('.error-message').hide();
+        // remove existing border error class
         $('#' + id).removeClass('error-border');
 
         // get validation rules from data attribute
@@ -92,7 +93,9 @@
                     $('#' + id).addClass('error-border');
                     valid.push('false');
                 }else if(!validate[type].test($('#' + id).val()) && value != ''){
+                    // fade in error message
                     $('#' + id).parent('.field-item').find('.error-message.' + type).fadeIn();
+                    // add border class to the input field
                     $('#' + id).addClass('error-border');
                     valid.push('false');
                 }else{

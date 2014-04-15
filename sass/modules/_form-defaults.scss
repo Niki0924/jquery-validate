@@ -3,7 +3,17 @@ form{
     @include rem("max-width", 400);
     width:50%;
 
+    fieldset{
+        border:none;
+    }
+
+    legend{
+        @include rem("margin", 0, 0, 20, 0);
+        @include rem("font-size", 20);
+    }
+
     button{
+        float:right;
         border:none;
         display:inline;
         background:$grey;
