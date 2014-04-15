@@ -27,6 +27,15 @@
         zipcode: 'A valid zip code is required',
         postalcode: 'A valid postal code is required',
         telephone: 'A valid telephone number is required',
+        password: 'A valid password is required',
+        url: 'A valid URL is required',
+        date: 'A valid date is required',
+        year: 'A valid year is required',
+        number: 'Numbers only',
+        alphabet: 'Alphabet characters only',
+        alphanumeric: 'Alphanumeric characters only',
+        ipaddress: 'A valid IP address is required',
+        hexvalue: 'A valid HEX value is required'
     };
 
     var valid = new Array();
