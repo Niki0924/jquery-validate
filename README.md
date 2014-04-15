@@ -1,2 +1,2 @@
-jquery-validate
+jQuery Form Validate
 ===============
