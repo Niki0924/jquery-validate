@@ -120,9 +120,11 @@
             }
         });
         if ($.inArray('false', valid) !== -1){
-            alert('dont send')
+            // prevent default form submit
+            event.preventDefault();
         }else{
-            alert('send')
+            // unbind prevent default and submit form
+            $(this).unbind('submit').submit();
         }
     });
     
