@@ -20,6 +20,8 @@
         telephone: 'A valid telephone number is required',
     }
 
+    var valid = new Array();
+
     // find all form elements on page
     $('input, select, textarea').each(function () {
         var attr = $(this).attr('data-validate');
@@ -44,7 +46,8 @@
     });
 
     // Validate form fields function
-    function validation(value, id){
+    function validation(value, id, callback){
+
         // hide any errors already showing
         $('#' + id).parent('.field-item').find('.error-message').hide();
 
@@ -54,16 +57,18 @@
             var validation = $('#' + id).data('validate').split(',');
 
             // check data attribute for validation rules
-            if(value === ''){
-                // show required erorr
-                $('#' + id).parent('.field-item').find('.error-message.required').fadeIn();
-            }else{
-                for (var i = 0; i < validation.length; i++){
-                    var type = validation[i];
-                    type = type.replace(' ', '');
-                    if(!validate[type].test($('#' + id).val())){
-                        $('#' + id).nextAll('.error-message.' + type).fadeIn();
-                    }
+            for (var i = 0; i < validation.length; i++){
+                var type = validation[i];
+                type = type.replace(' ', '');
+                if(value === '' && type === 'required'){
+                    // show required erorr
+                    $('#' + id).parent('.field-item').find('.error-message.required').fadeIn();
+                    valid.push('false');
+                }else if(!validate[type].test($('#' + id).val()) && value != ''){
+                    $('#' + id).parent('.field-item').find('.error-message.' + type).fadeIn();
+                    valid.push('false');
+                }else{
+                    valid.push('true');
                 }
             }
             
@@ -80,6 +85,30 @@
         // pass value and field id to validation function
         validation(value, fieldId);
 
+    });
+
+    $('form').submit(function( event ) {
+        //clear valid array
+        valid = new Array();
+
+        event.preventDefault();
+
+        $('input, select, textarea').each(function () {
+            var attr = $(this).attr('data-validate');
+            var fieldId = $(this).attr('id');
+            var value = $(this).val();
+
+            if (typeof attr !== 'undefined' && attr !== false) {
+                // pass field values and field ids to validation function
+                //validation(value, fieldId, callback);
+                validation(value, fieldId);
+            }
+        });
+        if ($.inArray('false', valid) !== -1){
+            alert('dont send')
+        }else{
+            alert('send')
+        }
     });
     
 }(jQuery));
