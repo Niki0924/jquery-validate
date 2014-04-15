@@ -1,6 +1,6 @@
 .field-item{
     position: relative;
-    @include rem("margin-bottom", 30);
+    @include rem("height", 80);
 
     label{
         display:block;
@@ -10,5 +10,9 @@
         @include roundedCorners(5);
         @include rem("padding", 5);
         border:1px solid $darkGrey;
+        width:100%;
+    }
+    .error-border{
+        border:1px solid $errorRed;
     }
 }

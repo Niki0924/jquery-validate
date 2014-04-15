@@ -1,6 +1,14 @@
 .error-message{
+    display:block;
+    background: lighten($errorRed, 35%);
+    border:2px solid $errorRed;
+    color:$errorRed;
     display:none;
     position: absolute;
-    @include rem("bottom", -20);
-    color:$errorRed;
+    @include rem("bottom", 8);
+    @include roundedBottom(5);
+    @include rem("padding", 5, 15);
+    @include rem("margin", 0, 10);
+    @include rem("max-width", 400);
+    width:90%;
 }

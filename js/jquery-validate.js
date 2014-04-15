@@ -75,6 +75,7 @@
 
         // hide any errors already showing
         $('#' + id).parent('.field-item').find('.error-message').hide();
+        $('#' + id).removeClass('error-border');
 
         // get validation rules from data attribute
         var attr = $('#' + id).attr('data-validate');
@@ -88,9 +89,11 @@
                 if(value === '' && type === 'required'){
                     // show required erorr
                     $('#' + id).parent('.field-item').find('.error-message.required').fadeIn();
+                    $('#' + id).addClass('error-border');
                     valid.push('false');
                 }else if(!validate[type].test($('#' + id).val()) && value != ''){
                     $('#' + id).parent('.field-item').find('.error-message.' + type).fadeIn();
+                    $('#' + id).addClass('error-border');
                     valid.push('false');
                 }else{
                     valid.push('true');
