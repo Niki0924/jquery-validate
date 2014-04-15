@@ -17,7 +17,7 @@
         alphanumeric: /^[a-zA-Z0-9]*$/,
         ipaddress: /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,
         hexvalue: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/
-    }
+    };
 
     // Error messages after validation rules
     var errorMessage = {
@@ -27,9 +27,10 @@
         zipcode: 'A valid zip code is required',
         postalcode: 'A valid postal code is required',
         telephone: 'A valid telephone number is required',
-    }
+    };
 
     var valid = new Array();
+    var validationRules;
 
     // find all form elements on page
     $('input, select, textarea').each(function () {
@@ -38,15 +39,15 @@
 
         if (typeof attr !== 'undefined' && attr !== false) {
 
-            var validation = $(this).data('validate').split(',');
+            validationRules = $(this).data('validate').split(',');
 
             // wrap inputs and label in div field item
             $(this).prev('label').andSelf().wrapAll('<div class="field-item"/>');
 
             // check data attribute for validation rules
-            for (var i = 0; i < validation.length; i++){
+            for (var i = 0; i < validationRules.length; i++){
                 // add error messages to markup
-                var type = validation[i];
+                var type = validationRules[i];
                 type = type.replace(' ', '');
 
                 var ariaError = fieldId + '-'+ type +'-error';
@@ -69,11 +70,11 @@
         // get validation rules from data attribute
         var attr = $('#' + id).attr('data-validate');
         if (typeof attr !== 'undefined' && attr !== false) {
-            var validation = $('#' + id).data('validate').split(',');
+            validationRules = $('#' + id).data('validate').split(',');
 
             // check data attribute for validation rules
-            for (var i = 0; i < validation.length; i++){
-                var type = validation[i];
+            for (var i = 0; i < validationRules.length; i++){
+                var type = validationRules[i];
                 type = type.replace(' ', '');
                 if(value === '' && type === 'required'){
                     // show required erorr
