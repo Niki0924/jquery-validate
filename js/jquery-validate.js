@@ -26,7 +26,7 @@
         email: 'A valid email address is required',
         zipcode: 'A valid zip code is required',
         postalcode: 'A valid postal code is required',
-        telephone: 'A valid telephone number is required',
+        telephone: 'A valid phone number is required',
         password: 'A valid password is required',
         url: 'A valid URL is required',
         date: 'A valid date is required',
