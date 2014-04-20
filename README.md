@@ -1,4 +1,4 @@
-jQuery Form Validate
+jQuery Form Validation
 ===============
 
 jQuery Validate is a form validation plugin that makes it easy to add validation to existing forms. Error messages are fully customizable and translated in various languages. This plugin also dyncamically adds [WAI-ARIA](http://www.w3.org/WAI/intro/aria) roles to help make your form more accessibile.
