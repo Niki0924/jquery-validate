@@ -1,5 +1,9 @@
 (function($) {
     'use strict';
+
+    // get language from the body html
+    var language = $('body').attr('data-lang');
+
     // Regex validation rules
     var validate = {
         required: /./,
@@ -21,21 +25,57 @@
 
     // Error messages after validation rules
     var errorMessage = {
-        required: 'This field is required',
-        name: 'A valid name is required',
-        email: 'A valid email address is required',
-        zipcode: 'A valid zip code is required',
-        postalcode: 'A valid postal code is required',
-        telephone: 'A valid phone number is required',
-        password: 'A valid password is required',
-        url: 'A valid URL is required',
-        date: 'A valid date is required',
-        year: 'A valid year is required',
-        number: 'Numbers only',
-        alphabet: 'Alphabet characters only',
-        alphanumeric: 'Alphanumeric characters only',
-        ipaddress: 'A valid IP address is required',
-        hexvalue: 'A valid HEX value is required'
+        en:{
+            required: 'This field is required',
+            name: 'A valid name is required',
+            email: 'A valid email address is required',
+            zipcode: 'A valid zip code is required',
+            postalcode: 'A valid postal code is required',
+            telephone: 'A valid phone number is required',
+            password: 'A valid password is required',
+            url: 'A valid URL is required',
+            date: 'A valid date is required',
+            year: 'A valid year is required',
+            number: 'Numbers only',
+            alphabet: 'Alphabet characters only',
+            alphanumeric: 'Alphanumeric characters only',
+            ipaddress: 'A valid IP address is required',
+            hexvalue: 'A valid HEX value is required'
+        },
+        de:{
+            required: 'Dieses Feld ist obligatorisch.',
+            name: 'Eine gültige E-Mail-Adresse ist erforderlich',
+            email: 'Ein gültiger Name ist erforderlich',
+            zipcode: 'Eine gültige Postleitzahl ist erforderlich',
+            postalcode: 'Eine gültige Postleitzahl ist erforderlich',
+            telephone: 'Eine gültige Telefonnummer ist erforderlich',
+            password: 'Ein gültiges Passwort ist erforderlich',
+            url: 'Eine gültige URL ist erforderlich',
+            date: 'Ein gültiges Datum ist erforderlich',
+            year: 'Ein gültiges Jahr ist erforderlich',
+            number: 'Nur Zahlen',
+            alphabet: 'Nur Buchstaben',
+            alphanumeric: 'Nur alphanumerische Zeichen',
+            ipaddress: 'Eine gültige IP Adresse ist erforderlich',
+            hexvalue: 'Ein gültiger HEX Wert ist erforderlich'
+        },
+        es:{
+            required: 'Este campo es obligatorio',
+            name: 'Se requiere una dirección de correo electrónico válida',
+            email: 'Se requiere un nombre válido',
+            zipcode: 'Se requiere un código postal válido',
+            postalcode: 'Se requiere un código postal válido',
+            telephone: 'Se requiere un número de teléfono válido',
+            password: 'Se requiere una contraseña válida',
+            url: 'Se requiere una URL válida',
+            date: 'Se requiere una fecha válida',
+            year: 'Se requiere un año válido',
+            number: 'Solo números',
+            alphabet: 'Solo caracteres alfabéticos',
+            alphanumeric: 'Solo caracteres alfanuméricos',
+            ipaddress: 'Se requiere una dirección IP válida',
+            hexvalue: 'Se requiere un valor hexadecimal válido'
+        }
     };
 
     var valid = new Array();
@@ -63,8 +103,16 @@
                 //add aria described by
                 $('#' + fieldId).attr('aria-describedby', ariaError);
 
+                var errormessage = errorMessage[language][type];
+
+                // convert UTF8 string
+                errormessage = errormessage.replace(
+                    /[\uff01-\uff5e]/g,
+                    function(ch) { return String.fromCharCode(ch.charCodeAt(0) - 0xfee0); }
+                    );
+
                 // add error message to field
-                $('#' + fieldId).parent('.field-item').append('<span class="error-message ' + type +'" id="'+ ariaError +'" role="alert">'+ errorMessage[type] +'</span>');
+                $('#' + fieldId).parent('.field-item').append('<span class="error-message ' + type +'" id="'+ ariaError +'" role="alert">'+ errormessage +'</span>');
             }
             
         }
