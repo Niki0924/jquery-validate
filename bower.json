@@ -9,10 +9,15 @@
         ".gitignore",
         ".jshintignore",
         ".jshintrc",
+        ".bower.json",
         "bower.json",
         "gruntfile.js",
         "package.json",
-        "README.md"
+        "README.md",
+        "css/style.css",
+        "screenshot.png",
+        "index.html",
+        "Gruntfile.js"
     ],
     "repository": {
         "type": "git",
