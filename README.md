@@ -10,6 +10,11 @@ English, German, Spanish
 
 ![jQuery Validate form example](https://raw.github.com/ryanburgess/jquery-validate/master/screenshot.png)
 
+## Install
+Using bower
+
+    bower install jQueryValidate
+
 ## Integration
 Add JavaScript reference for jquery-validate.js in your HTML.
     
