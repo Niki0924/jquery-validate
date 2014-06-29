@@ -2,9 +2,10 @@
     'use strict';
 
     // get language from the body html
-    var language = $('body').attr('data-lang');
-
-    if(language === 'undefined'){
+    var language;
+    if ( $('*[data-lang]' ).length >= 1 ) { 
+        language = $('body').attr('data-lang');
+    }else{
         language = 'en';
     }
 
