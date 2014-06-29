@@ -20,6 +20,10 @@ Add JavaScript reference for jquery-validate.js in your HTML.
     
     <script src="js/jquery-validate.min.js" type="text/javascript"></script>
 
+Add CSS reference in your HTML.
+    
+    <link rel="stylesheet" href="css/jquery-validate.css" type="text/css" media="screen">
+
 Then use the submitForm funciton for whatever you'd like to happen after the form validates.
     
     <script type="text/javascript">
