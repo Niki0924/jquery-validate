@@ -4,6 +4,10 @@
     // get language from the body html
     var language = $('body').attr('data-lang');
 
+    if(language === 'undefined'){
+        language = 'en';
+    }
+
     // Regex validation rules
     var validate = {
         required: /./,

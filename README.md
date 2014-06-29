@@ -32,6 +32,9 @@ Then use the submitForm funciton for whatever you'd like to happen after the for
         }
     </script>
 
+To use the supported languages add a data-lang attribute to the body tag. (English(en), German(de), Spanish(es))
+    
+    <body data-lang="en">
 
 ## Contributing
 
