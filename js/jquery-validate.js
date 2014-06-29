@@ -187,8 +187,8 @@
             // prevent default form submit
             event.preventDefault();
         }else{
-            // unbind prevent default and submit form
-            $(this).unbind('submit').submit();
+            // Call submit form function
+            submitForm();
         }
     });
     

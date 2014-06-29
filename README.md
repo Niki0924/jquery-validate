@@ -10,6 +10,20 @@ English, German, Spanish
 
 ![jQuery Validate form example](https://raw.github.com/ryanburgess/jquery-validate/master/screenshot.png)
 
+## Integration
+Add JavaScript reference for jquery-validate.js in your HTML.
+    
+    <script src="js/jquery-validate.min.js" type="text/javascript"></script>
+
+Then use the submitForm funciton for whatever you'd like to happen after the form validates.
+    
+    <script type="text/javascript">
+        window.submitForm = function(){
+            // after form validation is good then
+        }
+    </script>
+
+
 ## Contributing
 
 1. Fork it
