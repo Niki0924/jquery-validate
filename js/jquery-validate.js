@@ -105,6 +105,12 @@
                 type = type.replace(' ', '');
 
                 var ariaError = fieldId + '-'+ type +'-error';
+
+                //add ARIA role required if input is required
+                if(type === 'required'){
+                    $('#' + fieldId).attr('aria-required', 'true');
+                }
+                
                 //add aria described by
                 $('#' + fieldId).attr('aria-describedby', ariaError);
 
