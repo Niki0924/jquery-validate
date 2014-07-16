@@ -137,6 +137,9 @@
         // remove existing border error class
         $('#' + id).removeClass('error-border');
 
+        //trim blank space from value
+        value = $.trim(value);
+
         // get validation rules from data attribute
         var attr = $('#' + id).attr('data-validate');
         if (typeof attr !== 'undefined' && attr !== false) {
