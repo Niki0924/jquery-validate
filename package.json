@@ -2,8 +2,31 @@
   "name": "jQuery-Validate",
   "version": "1.0.0",
   "description": "jQuery Form Validation plugin",
-  "repository": "https://github.com/ryanburgess/jquery-validate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanburgess/jquery-validate"
+  },
   "author": "Ryan Burgess",
+  "main": "jquery-validate.js",
+  "ignore": [
+    "sass",
+    "spec",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    ".bower.json",
+    "bower.json",
+    "gruntfile.js",
+    "package.json",
+    "README.md",
+    "css/style.css",
+    "screenshot.png",
+    "index.html",
+    "Gruntfile.js",
+    "node_modules",
+    "screenshot.png"
+  ],
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-watch": "~0.5.3",
@@ -11,5 +34,28 @@
     "grunt-newer": "~0.6.1",
     "grunt-sass": "~0.11.0",
     "grunt-bump": "0.0.13"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/ryanburgess/jquery-validate/issues"
+  },
+  "homepage": "https://github.com/ryanburgess/jquery-validate",
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-newer": "~0.6.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-bump": "~0.0.13",
+    "grunt-sass": "~0.11.0"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "validation",
+    "validate",
+    "jquery",
+    "javascript",
+    "forms"
+  ],
+  "license": "MIT"
 }
