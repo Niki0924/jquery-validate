@@ -12,6 +12,7 @@ English, German, Spanish
 
 ## Install
 Using npm
+
     npm install jQuery-Validate
 
 Using bower
