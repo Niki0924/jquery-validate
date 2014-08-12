@@ -11,6 +11,9 @@ English, German, Spanish
 ![jQuery Validate form example](https://raw.github.com/ryanburgess/jquery-validate/master/screenshot.png)
 
 ## Install
+Using npm
+    npm install jQuery-Validate
+
 Using bower
 
     bower install jQueryValidate

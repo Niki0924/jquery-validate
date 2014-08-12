@@ -8,25 +8,6 @@
   },
   "author": "Ryan Burgess",
   "main": "jquery-validate.js",
-  "ignore": [
-    "sass",
-    "spec",
-    ".bowerrc",
-    ".gitignore",
-    ".jshintignore",
-    ".jshintrc",
-    ".bower.json",
-    "bower.json",
-    "gruntfile.js",
-    "package.json",
-    "README.md",
-    "css/style.css",
-    "screenshot.png",
-    "index.html",
-    "Gruntfile.js",
-    "node_modules",
-    "screenshot.png"
-  ],
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-watch": "~0.5.3",
@@ -46,9 +27,6 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-bump": "~0.0.13",
     "grunt-sass": "~0.11.0"
-  },
-  "scripts": {
-    "test": "test"
   },
   "keywords": [
     "validation",
